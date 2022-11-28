@@ -2,8 +2,8 @@
 
 <?php
   include 'models/conexion.php';
-  $sentencia = $bd->query("SELECT * from postres");
-  $postres = $sentencia->fetchAll(PDO::FETCH_OBJ);
+  $sentencia = $bd->query("SELECT * from libros");
+  $libros = $sentencia->fetchAll(PDO::FETCH_OBJ);
   //print_r($postres);
 ?>
 <div class="container mt-3">
@@ -12,21 +12,21 @@
       <thead class="table-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Porciones</th>
-          <th scope="col">Descripcion</th>
-          <th scope="col">Precio</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Editorial</th>
+          <th scope="col">Categoria</th>
           <th scope="col" colspan="2">Acciones</th>
         </tr>
       </thead>
       <tbody class=" table-group-divider">
-        <?php foreach($postres as $dato){ ?>
+        <?php foreach($libros as $dato){ ?>
         <tr>
           <th scope="row"><?php echo $dato->id ?></th>
-          <td><?php echo $dato->nombre ?></td>
-          <td><?php echo $dato->porciones ?></td>
-          <td><?php echo $dato->descripcion?></td>
-          <td><?php echo "$".$dato->precio ?></td>
+          <td><?php echo $dato->titulo ?></td>
+          <td><?php echo $dato->autor ?></td>
+          <td><?php echo $dato->editorial ?></td>
+          <td><?php echo $dato->categoria ?></td>
           <td>
             <a href="controllers/editar.php?id=<?php echo $dato->id ?>" class="btn btn-warning">Editar</a>
           </td>
@@ -41,24 +41,23 @@
 
     <div class="container mb-5">
       <div class="card">
-        <div class="card-header">Ingrese un nuevo postre</div>
+        <div class="card-header">Ingrese un nuevo libro</div>
         <form action="controllers/registro.php" method="POST">
           <div class="mb-2 mx-2">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" placeholder="Ingrese nombre" name="inputNombre" required>
+            <label class="form-label">Titulo</label>
+            <input type="text" class="form-control" placeholder="Ingrese titulo" name="inputTitulo" required>
           </div>
           <div class="mb-2 mx-2">
-            <label class="form-label">Porciones</label>
-            <input type="number" class="form-control" placeholder="Ingrese prociones" name="inputPorciones" required>
+            <label class="form-label">Autor</label>
+            <input type="number" class="form-control" placeholder="Ingrese autor" name="inputAutor" required>
           </div>
           <div class="mb-2 mx-2">
-            <label class="form-label">Descripcion</label>
-            <input type="text" class="form-control" placeholder="Ingrese una descripcion" name="inputDescripcion"
-              required>
+            <label class="form-label">Editorial</label>
+            <input type="text" class="form-control" placeholder="Ingrese una editorial" name="inputEditorial" required>
           </div>
           <div class="mb-2 mx-2">
-            <label class="form-label">Precio</label>
-            <input type="number" class="form-control" placeholder="Ingrese un precio" name="inputPrecio" required>
+            <label class="form-label">Categoria</label>
+            <input type="number" class="form-control" placeholder="Ingrese un categoria" name="inputCategoria" required>
           </div>
           <div class="mb-2 mx-2">
             <input type="submit" class="btn btn-primary" value="Registrar">
