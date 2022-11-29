@@ -49,7 +49,7 @@
           </div>
           <div class="mb-2 mx-2">
             <label class="form-label">Autor</label>
-            <input type="number" class="form-control" placeholder="Ingrese autor" name="inputAutor" required>
+            <input type="text" class="form-control" placeholder="Ingrese autor" name="inputAutor" required>
           </div>
           <div class="mb-2 mx-2">
             <label class="form-label">Editorial</label>
@@ -57,7 +57,7 @@
           </div>
           <div class="mb-2 mx-2">
             <label class="form-label">Categoria</label>
-            <input type="number" class="form-control" placeholder="Ingrese un categoria" name="inputCategoria" required>
+            <input type="text" class="form-control" placeholder="Ingrese un categoria" name="inputCategoria" required>
           </div>
           <div class="mb-2 mx-2">
             <input type="submit" class="btn btn-primary" value="Registrar">
