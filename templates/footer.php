@@ -1,8 +1,6 @@
-<footer class="container bg-success fixed-bottom">
-  <div class="row">
-    <div class="col-md">
-      <p class="text-center text-white">Copyright CRUD 2022</p>
-    </div>
+<footer class="bg-info">
+  <div class="col-md">
+    <p class="text-center text-white pt-2">Copyright CRUD Libreria by Kevin Hernandez 2022</p>
   </div>
 </footer>
 
